@@ -1,0 +1,15 @@
+{
+  "name": "webinar-ribierse-cyted-2026",
+  "version": "1.0.0",
+  "description": "Site do Webinar - Transição Energética no Setor de Transportes (RIBIERSE-CYTED)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "build": "node build.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  }
+}

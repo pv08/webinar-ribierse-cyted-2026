@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <div class="container">
+        <div class="badge">IEEE PES Brazil Spotlight Series</div>
+
+        <h1>Webinar<br>Transição Energética no Setor de Transportes</h1>
+
+        <div class="subtitle">
+            Desafios, Oportunidades e Inovações para a Descarbonização
+        </div>
+
+        <div class="info-bar">
+            <div class="info-item"><strong>📅 Data:</strong> 11 de Agosto de 2026</div>
+            <div class="info-item"><strong>🕐 Horário:</strong> 14h às 17h (GMT-3)</div>
+            <div class="info-item"><strong>💻 Formato:</strong> Online e Gratuito</div>
+        </div>
+
+        <div class="section-title">Programação</div>
+
+        <div class="timeline">
+            <% programa.forEach(function (item) { %>
+                <div class="tl-item tl-<%= item.tipo %>">
+                    <div class="tl-node"><%= item.numero || (item.tipo === 'intervalo' ? '☕' : '') %></div>
+
+                    <div class="tl-card">
+
+                        <% if (item.tipo !== 'intervalo' && item.tipo !== 'encerramento') { %>
+                            <% if (item.foto) { %>
+                                <img class="speaker-photo" src="<%= item.foto %>" alt="<%= item.autor %>">
+                            <% } else { %>
+                                <div class="speaker-photo-placeholder"><%= iniciais(item.autor) %></div>
+                            <% } %>
+                        <% } %>
+
+                        <% if (item.tipo === 'intervalo') { %>
+                            <div class="tl-content"><%= item.titulo %></div>
+                        <% } else { %>
+                            <div class="tl-content">
+                                <% if (item.hora) { %><div class="program-time"><%= item.hora %></div><% } %>
+                                <div class="program-title"><%= item.titulo %></div>
+                                <% if (item.autor) { %>
+                                    <div class="program-speaker"><strong><%= item.autor %></strong><% if (item.cargo) { %> — <%= item.cargo %><% } %></div>
+                                <% } %>
+                            </div>
+                        <% } %>
+
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+
+        <div class="org-section">
+            <div class="org-title">Organização</div>
+            <div class="logos-grid">
+                <img src="files/61212d31e0a6cf6f0a08713816d691cfd65d7b19.png" alt="UNICAMP" class="org-logo">
+                <img src="files/c90da3c3a8138fe1056c2d935c66c388b5928340.png" alt="UFJF" class="org-logo">
+                <img src="files/RIBIERSE.png" alt="RIBIERSE-CYTED" class="org-logo">
+                <img src="files/CYTED.png" alt="CYTED" class="org-logo">
+            </div>
+            <div class="org-list">
+                Universidade Estadual de Campinas (UNICAMP) • Universidade Federal de Juiz de Fora (UFJF) • Universidade Federal Fluminense (UFF)<br>
+                RIBIERSE-CYTED — Rede Ibero-americana para a Integração em Larga Escala de Energias Renováveis nos Sistemas Elétricos<br>
+                IEEE PES Brasil — Power &amp; Energy Society
+            </div>
+        </div>
+
+        <div class="footer">
+            O futuro do transporte dependerá da integração entre inovação tecnológica, fontes renováveis de energia,<br>
+            digitalização e políticas públicas eficientes.
+        </div>
+    </div>
+</body>
+</html>
