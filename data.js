@@ -26,9 +26,14 @@ const PROGRAMA = [
     numero: "",
     hora: "14h00",
     titulo: "Abertura",
-    autor: "Prof. Fabrício Campos",
-    cargo: "Pró-Reitor de Inovação e Professor da UFJF",
+    autor: "Prof. Bruno H. Dias (UFJF)\nProf. Bárbara J. T. Medeiros (Unicamp)\nProf. Bruno W. França (UFF)",
+    cargo: "",
     foto: "files/fabricio.png",
+    fotos: [
+      "files/bruno.jpeg",
+      "files/barbara.jpeg",
+      "files/bruno_franca.jpg"
+    ],
     tipo: "abertura",
     bio: "PLACEHOLDER — Breve biografia de Fabrício Campos: formação, área de atuação, cargos e principais contribuições.",
     resumo: "PLACEHOLDER — Resumo da abertura do webinar: boas-vindas, contextualização do tema da transição energética no setor de transportes e apresentação da programação.",

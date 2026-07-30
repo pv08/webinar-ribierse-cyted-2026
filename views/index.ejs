@@ -29,7 +29,13 @@
                     <div class="tl-card">
 
                         <% if (item.tipo !== 'intervalo' && item.tipo !== 'encerramento') { %>
-                            <% if (item.foto) { %>
+                            <% if (item.fotos && item.fotos.length) { %>
+                                <div class="speaker-photo-group">
+                                    <% item.fotos.forEach(function (foto) { %>
+                                        <img class="speaker-photo" src="<%= foto %>" alt="<%= item.autor %>">
+                                    <% }); %>
+                                </div>
+                            <% } else if (item.foto) { %>
                                 <img class="speaker-photo" src="<%= item.foto %>" alt="<%= item.autor %>">
                             <% } else { %>
                                 <div class="speaker-photo-placeholder"><%= iniciais(item.autor) %></div>
@@ -58,9 +64,35 @@
             <div class="logos-grid">
                 <img src="files/61212d31e0a6cf6f0a08713816d691cfd65d7b19.png" alt="UNICAMP" class="org-logo">
                 <img src="files/c90da3c3a8138fe1056c2d935c66c388b5928340.png" alt="UFJF" class="org-logo">
-                <img src="files/RIBIERSE.png" alt="RIBIERSE-CYTED" class="org-logo">
+                <img src="files/uff.webp" alt="UFF" class="org-logo">
+                <img src="files/RIBIERSE.png" alt="RIBIERSE-CYTED" class="org-logo org-logo-ribierse">
                 <img src="files/CYTED.png" alt="CYTED" class="org-logo">
             </div>
+
+            <% var chapters = [
+                'Minas Gerais Chapter',
+                'Centro-Norte Brasil Chapter',
+                'Centro-Norte Brasil Joint Chapter',
+                'Rio de Janeiro Chapter',
+                'Northeast Brazil Chapter',
+                'South Brazil Chapter',
+                
+            ]; %>
+            <div class="chapters-row">
+                <% chapters.forEach(function (nome) { %>
+                    <figure class="chapter">
+                        <img src="files/logo_pes.png" alt="IEEE PES" class="chapter-logo">
+                        <figcaption class="chapter-name"><%= nome %></figcaption>
+                    </figure>
+                <% }); %>
+                <figure class="chapter">
+                    <img src="files/ieee.png" alt="IEEE PES" class="chapter-logo">
+                    <figcaption class="chapter-name">IEEE Professional Chapter 1 IAS/PELS/PES</figcaption>
+                </figure>
+
+                
+            </div>
+
             <div class="org-list">
                 Universidade Estadual de Campinas (UNICAMP) • Universidade Federal de Juiz de Fora (UFJF) • Universidade Federal Fluminense (UFF)<br>
                 RIBIERSE-CYTED — Rede Ibero-americana para a Integração em Larga Escala de Energias Renováveis nos Sistemas Elétricos<br>

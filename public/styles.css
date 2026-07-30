@@ -140,7 +140,7 @@ h1 {
 .tl-card {
     display: flex;
     align-items: flex-start;
-    gap: 18px;
+    gap: 10px;
     background: rgba(255,255,255,0.07);
     border-radius: 16px;
     padding: 20px 22px;
@@ -156,9 +156,45 @@ a.tl-card:hover {
     box-shadow: 0 8px 24px rgba(0,0,0,0.35);
 }
 
+.speaker-photo-group {
+    position: relative;
+    width: 100px;
+    height: 130px;
+    flex-shrink: 0;
+}
+
+.speaker-photo-group .speaker-photo {
+    position: absolute;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #4CAF50;
+    background: #1a3a1a;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+.speaker-photo-group .speaker-photo:nth-child(1) {
+    top: 0;
+    left: 70%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.speaker-photo-group .speaker-photo:nth-child(2) {
+    bottom: 7px;
+    left: 10px;
+    z-index: 2;
+}
+
+.speaker-photo-group .speaker-photo:nth-child(3) {
+    /* bottom: 0; */
+    right: 40%;
+    z-index: 1;
+}
 .speaker-photo {
-    width: 84px;
-    height: 84px;
+    width: 68px;
+    height: 68px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #4CAF50;
@@ -205,6 +241,7 @@ a.tl-card:hover {
     font-size: 0.9rem;
     color: #c8e6c9;
     line-height: 1.4;
+    white-space: pre-line;
 }
 
 .program-speaker strong { color: #ffffff; }
@@ -263,7 +300,7 @@ a.tl-card:hover {
 }
 
 .org-logo {
-    height: 90px;
+    height: 100px;
     width: auto;
     object-fit: contain;
     background: rgba(255,255,255,0.92);
@@ -274,6 +311,62 @@ a.tl-card:hover {
 }
 
 .org-logo:hover { transform: scale(1.05); }
+
+/* A logo da RIBIERSE-CYTED: a arte preenche mais o chip sem que a caixa cresça.
+   O chip = altura + padding; aumentamos a altura e reduzimos o padding na mesma
+   medida (100 + 2*12 = 124px  →  116 + 2*4 = 124px), mantendo o chip do mesmo tamanho. */
+.org-logo-ribierse {
+    height: 100px;
+    padding: 8px 20px;
+}
+
+/* ---------- Chapters IEEE PES (uma única linha) ---------- */
+.chapters-row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+    margin: 8px 0 24px 0;
+}
+
+.chapter {
+    flex: 1 1 0;
+    min-width: 0;               /* permite os itens encolherem p/ caber na linha */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.chapter-logo {
+    height: 120px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    background: rgba(255,255,255,0.92);
+    padding: 10px 1px;
+    border-radius: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.22);
+}
+
+/* A "barra" separando a logo do nome do chapter (como no exemplo). */
+.chapter-name {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255,255,255,0.45);
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #c8e6c9;
+}
+
+/* Em telas estreitas, quebra para 3 por linha para não estourar horizontalmente. */
+@media (max-width: 600px) {
+    .chapters-row { flex-wrap: wrap; }
+    .chapter { flex: 0 1 28%; }
+}
 
 .org-list {
     font-size: 0.85rem;
