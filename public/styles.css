@@ -293,18 +293,18 @@ a.tl-card:hover {
 .logos-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 22px 24px;
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
 }
 
 .org-logo {
+    width: 140px;
     height: 100px;
-    width: auto;
     object-fit: contain;
     background: rgba(255,255,255,0.92);
-    padding: 12px 18px;
+    padding: 10px 5px;
     border-radius: 12px;
     box-shadow: 0 4px 14px rgba(0,0,0,0.25);
     transition: transform 0.2s;
@@ -313,26 +313,26 @@ a.tl-card:hover {
 .org-logo:hover { transform: scale(1.05); }
 
 /* A logo da RIBIERSE-CYTED: a arte preenche mais o chip sem que a caixa cresça.
-   O chip = altura + padding; aumentamos a altura e reduzimos o padding na mesma
-   medida (100 + 2*12 = 124px  →  116 + 2*4 = 124px), mantendo o chip do mesmo tamanho. */
+   O chip mantém altura similar com ajuste de padding para a imagem ficar maior.
+   Exemplo: 112 + 2*8 = 128px, ainda dentro do mesmo conjunto visual. */
 .org-logo-ribierse {
-    height: 100px;
-    padding: 8px 20px;
+    height: 112px;
+    padding: 6px 18px;
 }
 
 /* ---------- Chapters IEEE PES (uma única linha) ---------- */
 .chapters-row {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    gap: 16px;
+    gap: 20px 16px;
     margin: 8px 0 24px 0;
 }
 
 .chapter {
-    flex: 1 1 0;
-    min-width: 0;               /* permite os itens encolherem p/ caber na linha */
+    flex: 0 0 140px;
+    min-width: 140px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -340,9 +340,9 @@ a.tl-card:hover {
 }
 
 .chapter-logo {
+    display: block;
+    width: 140px;
     height: 120px;
-    width: auto;
-    max-width: 100%;
     object-fit: contain;
     background: rgba(255,255,255,0.92);
     padding: 10px 1px;
