@@ -26,7 +26,7 @@ const PROGRAMA = [
     numero: "",
     hora: "14h00",
     titulo: "Abertura",
-    autor: "Prof. Bruno H. Dias (UFJF)\nProf. Bárbara J. T. Medeiros (Unicamp)\nProf. Bruno W. França (UFF)",
+    autor: "Prof. Bruno H. Dias (UFJF)\nProf. Bárbara Teruel (Unicamp)\nProf. Bruno W. França (UFF)",
     cargo: "",
     foto: "files/fabricio.png",
     fotos: [
